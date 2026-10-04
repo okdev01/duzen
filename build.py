@@ -16,7 +16,7 @@ def main():
                     "--name",name,"--icon",str(root/"app.ico"),"--distpath",str(root/"dist"),
                     "--workpath",str(root/"build"),"--specpath",str(root),str(root/"main.py")],cwd=root,check=True)
     target=root/"dist"/name
-    for filename in ("LICENSE","README.md","THIRD_PARTY_NOTICES.txt"):
+    for filename in ("LICENSE","README.md","THIRD_PARTY_NOTICES.txt","THIRD_PARTY_LICENSES.txt"):
         shutil.copy2(root/filename,target/filename)
     licenses=target/"licenses"
     licenses.mkdir(exist_ok=True)
@@ -32,7 +32,8 @@ def main():
     release=root/"release"
     release.mkdir(exist_ok=True)
     archive=shutil.make_archive(str(release/f"{name}-{version}-Windows-x64"),"zip",root/"dist",name)
-    digest=hashlib.file_digest(open(archive,"rb"),"sha256").hexdigest()
+    with open(archive,"rb") as stream:
+        digest=hashlib.file_digest(stream,"sha256").hexdigest()
     (release/"SHA256SUMS.txt").write_text(f"{digest}  {Path(archive).name}\n",encoding="utf-8")
     print(archive)
 
