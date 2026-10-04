@@ -1,0 +1,20 @@
+This application is MIT licensed; bundled dependencies retain their own licenses.
+
+Qt / PySide6 Essentials / Shiboken: Qt Company and contributors.
+Used under LGPL-3.0; applicable LGPL, GPL exception and other license texts are
+included in licenses/. The portable distribution uses replaceable shared libraries
+under _internal. Application source and build instructions are in the GitHub repo.
+Qt source: https://code.qt.io/cgit/qt/
+PySide source: https://code.qt.io/cgit/pyside/pyside-setup.git/
+Qt licensing: https://doc.qt.io/qt-6/licensing.html
+
+Python: Python Software Foundation License.
+Source: https://www.python.org/downloads/source/
+PyInstaller bootloader: GPL with the bootloader exception.
+Source: https://github.com/pyinstaller/pyinstaller
+Pillow (Kare): MIT-CMU and bundled-library licenses.
+Source: https://github.com/python-pillow/Pillow
+
+System fonts shown in screenshots are provided by the operating system and are
+not redistributed. Demo data is synthetic. No network requests or telemetry are
+implemented by these applications.
